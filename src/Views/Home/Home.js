@@ -71,7 +71,7 @@ showPosition(position) {
             </MDBCardText>
        
 
-                           <Link to ="/restaurant">
+                           <Link to ={`/restaurant/${places.restaurant.R.res_id}`}>
                             <MDBBtn color="primary" className="cardButton" >Yum!</MDBBtn></Link>
                            
                          </MDBCardBody> 

@@ -3,6 +3,7 @@ import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBCol
 MDBHamburgerToggler } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import "./Navbar.css"
+import {Link} from "react-router-dom"
 class Navbar extends Component {
 state = {
   collapse1: false,
@@ -16,7 +17,8 @@ toggleCollapse = collapseID => () => {
 toggleSingleCollapse = collapseId => {
   this.setState({
     ...this.state,
-    [collapseId]: !this.state[collapseId]
+	[collapseId]: !this.state[collapseId],
+	
   });
 }
 

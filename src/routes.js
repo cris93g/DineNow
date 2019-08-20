@@ -13,5 +13,5 @@ export default (
         {/* <Route component={SearchByLat} path="/searchlat" /> */}
         <Route component={Restaurants} path="/city/:cityName" />
         <Route component={NearMe} path="/near/:lat/:lon" />
-        <Route component={SpecificRestaurant} path="/restaurant" />
+        <Route component={SpecificRestaurant} path="/restaurant/:cityId" />
     </Switch>);
