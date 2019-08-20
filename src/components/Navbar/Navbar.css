@@ -1,0 +1,4 @@
+#root > div > div.container > nav {
+	box-shadow: none;
+	border-bottom: 1px solid lightgray;
+}

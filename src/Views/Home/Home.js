@@ -1,8 +1,12 @@
 import React,{Component} from "react"
-import Nav from "../../components/Nav/Nav"
+import Navbar from "../../components/Navbar/Navbar"
 import axios from "axios";
 import "./Home.css"
-
+import Search from "../../components/Search/Search"
+import Carousel from "../../components/Carousel/Carousel"
+import {  MDBCard, MDBCardImage,
+    MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
+    import {Link} from "react-router-dom"
 class Home extends Component {
     constructor(props){
                 super(props)
@@ -40,7 +44,7 @@ showPosition(position) {
 
 
     render() {
-        
+ 
         const {rest,lat,lon}=this.state
         
         this.getLocation()
@@ -48,37 +52,36 @@ showPosition(position) {
         
         return(
             <div>
-              {/* <Nav/> */}
-            {rest ? (
+<Search/>
+<Carousel/>
+<br/>
+<h5>Restaurants Near you</h5>
+<div className="welp">
+            {
+                rest ? (
                 rest.map(places =>{
                     return(
-                        <div className="cardWrapper">
-                            <p>{places.restaurant.name}</p>
-                            <p>{places.restaurant.cuisines}</p>
-                            <p>{places.restaurant.location.address}</p>
-                            <p>{places.restaurant.phone_numbers}</p>
-                            <p>average cost for two${places.restaurant.average_cost_for_two}</p>
-                            <p>rating {places.restaurant.user_rating.aggregate_rating}/5</p>
-                            {places.restaurant.photos? (
-places.restaurant.photos.map(images =>{
-return(
-<div className="picContainer">
-<img  className="restpicture" src={images.photo.url}/>
-</div>
-)
-})
-                            ):""
-                     
-                            }
+                        <div className="cardContainer">
+                        <MDBCard className="mb-2">
+                     <MDBCardImage className="img-fluid" src={places.restaurant.featured_image} />  
+            <MDBCardBody className="cardBod">    
+           <MDBCardTitle className="titleWrapper">{places.restaurant.name}</MDBCardTitle>
+           <MDBCardText>              {places.restaurant.cuisines} 
+            {/* <div className="rating">{`${places.restaurant.user_rating.aggregate_rating}/5`}</div>  */}
+            </MDBCardText>
+       
+
+                           <Link to ="/restaurant">
+                            <MDBBtn color="primary" className="cardButton" >Yum!</MDBBtn></Link>
                            
-                            <p>{places.restaurant.timings}</p>
-                            <hr/>
-                        </div>
+                         </MDBCardBody> 
+                      </MDBCard></div>
                     )
                 })
                 ):
-            ""}
-            </div>
+            ""
+            }
+            </div></div>
         )
     }
 }

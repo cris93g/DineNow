@@ -1,0 +1,4 @@
+#root > div > div:nth-child(2) > div > div > form > input {
+	width: 60vw;
+	margin-left: 15vw;
+}

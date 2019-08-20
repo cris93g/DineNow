@@ -50,7 +50,22 @@ let getRestaurantsNearMe = async (req,res) =>{
 	}
 }
 
+let getRestaurant = async (req,res) =>{
+	let resId = req.body;
+	let results = await axios.get(`https://developers.zomato.com/api/v2.1/restaurant?res_id=${resId}`,{
+		headers: {
+            "user-key": API
+        }
+	})
+	let info = results.data;
+
+	if (info) {
+		res.status(200).json(info);
+	}
+}
+
 module.exports = {
     getRestaurantsByLocation,
-    getRestaurantsNearMe
+	getRestaurantsNearMe,
+	getRestaurant
 };

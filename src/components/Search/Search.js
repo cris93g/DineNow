@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import {Link} from "react-router-dom"
+import { MDBCol, MDBFormInline, MDBIcon } from "mdbreact";
+import "./Search.css"
 class Search extends Component {
     constructor(props){
         super(props)
@@ -15,17 +17,18 @@ searchCityHandler(e){
 }
 render(){
 const {cityName}= this.state;
-console.log(cityName)
+
 return(
-    <div>
-        	<input
+    <div> <MDBCol md="11">
+    <MDBFormInline className="md-form">
+   
+        	<input className="form-control form-control-sm ml-3 w-75" type="text" placeholder="City" aria-label="Search"
 									className="searchb"
 									className="inputName"
 									onChange={e => this.searchCityHandler(e)}
-			/>
-                                <Link to={`/city/${cityName}`}>
-									<button className="inp">Search</button>
-								</Link>
+			/> <Link to={`/city/${cityName}`}>   <MDBIcon icon="search" /></Link> </MDBFormInline>
+            </MDBCol>
+                           
     </div>
 )
 }

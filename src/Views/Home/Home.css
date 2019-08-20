@@ -1,5 +1,40 @@
-.cardWrapper {
-	width: 400px;
-	height: 250px;
-	border: 1px solid black;
+.cardContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+.mb-2 {
+	width: 48vw;
+	margin-left: 5px;
+	padding: 0px;
+}
+.welp {
+	display: flex;
+	width: 100vw;
+	flex-wrap: wrap;
+	padding: 0px;
+}
+.cardBod {
+	height: 180px;
+	padding: 0px;
+}
+.titleWrapper {
+	font-size: 1em;
+}
+
+.rating {
+	width: 30px;
+	height: 30px;
+	background-color: lightgreen;
+	font-size: 10px;
+	border-radius: 5px;
+	margin-left: -20px;
+	margin-top: -60px;
+	padding: 0;
+	position: absolute;
+}
+.cardButton {
+	position: relative;
+	padding: 0;
 }

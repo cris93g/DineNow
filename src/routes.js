@@ -5,6 +5,7 @@ import Search from "./components/Search/Search"
 // import SearchByLat from "./components/SearchByLat/SearchByLat"
 import NearMe from "./Views/NearMe/NearMe"
 import Home from "./Views/Home/Home"
+import SpecificRestaurant from "./Views/SpecificRestaurant/SpecificRestaurant"
 export default (
     <Switch>
          <Route component={Home} exact path="/" />
@@ -12,4 +13,5 @@ export default (
         {/* <Route component={SearchByLat} path="/searchlat" /> */}
         <Route component={Restaurants} path="/city/:cityName" />
         <Route component={NearMe} path="/near/:lat/:lon" />
+        <Route component={SpecificRestaurant} path="/restaurant" />
     </Switch>);
