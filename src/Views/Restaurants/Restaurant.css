@@ -1,0 +1,10 @@
+.restpicture {
+	width: 300px;
+	height: 300px;
+}
+.picContainer {
+	display: flex;
+	width: 80vw;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
