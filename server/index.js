@@ -6,13 +6,15 @@ routes = require("./routes/routes");
 
 const app = express();
 const port = process.env.port || 3001;
-
+app.use(express.static(__dirname+ '/../build'))
 app.use(cors());
 app.use(json());
 
 routes(app);
 
-// app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'>./build/index.html'));
+});
 
 app.listen(port, () => {
 	console.log(`app is listening on port ${port}`);
