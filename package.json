@@ -2,21 +2,23 @@
 	"name": "close_food",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://dinenow.herokuapp.com/",
 	"dependencies": {
+		"@material-ui/core": "latest",
+		"@material-ui/icons": "latest",
 		"axios": "^0.19.0",
 		"body-parser": "^1.19.0",
 		"cors": "^2.8.5",
 		"dotenv": "^8.1.0",
 		"express": "^4.17.1",
+		"http-proxy-middleware": "^0.19.1",
 		"massive": "^5.11.2",
 		"mdbreact": "^4.19.1",
 		"react": "^16.9.0",
 		"react-dom": "^16.9.0",
 		"react-router-dom": "^5.0.1",
 		"react-scripts": "3.1.1",
-		"styled-components": "^4.3.2",
-		"@material-ui/icons": "latest",
-		"@material-ui/core": "latest"
+		"styled-components": "^4.3.2"
 	},
 	"proxy": "http://localhost:3001",
 	"scripts": {
