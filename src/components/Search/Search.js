@@ -22,7 +22,7 @@ return(
     <div> <MDBCol md="11">
     <MDBFormInline className="md-form">
    
-        	<input className="form-control form-control-sm ml-3 w-75" type="text" placeholder="City" aria-label="Search"
+        	<input className="form-control form-control-sm ml-3 w-75" type="text" placeholder="City or State" aria-label="Search"
 									className="searchb"
 									className="inputName"
 									onChange={e => this.searchCityHandler(e)}

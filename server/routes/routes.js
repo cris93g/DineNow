@@ -3,5 +3,5 @@ const { getRestaurantsByLocation,getRestaurantsNearMe,getRestaurant } = require(
 module.exports = app => {
     app.post(`/api/food`, getRestaurantsByLocation);
     app.post(`/api/foodclosetome`, getRestaurantsNearMe);
-    app.post(`/api/restaurant`, getRestaurant);
+    app.post(`/api/specrestaurant`, getRestaurant);
 };

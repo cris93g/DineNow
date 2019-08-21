@@ -7,6 +7,7 @@ import Carousel from "../../components/Carousel/Carousel"
 import {  MDBCard, MDBCardImage,
     MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
     import {Link} from "react-router-dom"
+    import Loader from "../../components/Loader/Loader"
 class Home extends Component {
     constructor(props){
                 super(props)
@@ -66,8 +67,7 @@ showPosition(position) {
                      <MDBCardImage className="img-fluid" src={places.restaurant.featured_image} />  
             <MDBCardBody className="cardBod">    
            <MDBCardTitle className="titleWrapper">{places.restaurant.name}</MDBCardTitle>
-           <MDBCardText>              {places.restaurant.cuisines} 
-            {/* <div className="rating">{`${places.restaurant.user_rating.aggregate_rating}/5`}</div>  */}
+           <MDBCardText style={{ marginBottom:"0px", }}>              {places.restaurant.cuisines} 
             </MDBCardText>
        
 
@@ -79,7 +79,7 @@ showPosition(position) {
                     )
                 })
                 ):
-            ""
+           <Loader/>
             }
             </div></div>
         )

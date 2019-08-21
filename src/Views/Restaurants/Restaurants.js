@@ -1,6 +1,9 @@
 import React,{Component} from "react"
 import axios from "axios"
 import "./Restaurant.css"
+import {  MDBCard, MDBCardImage,
+    MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
+    import {Link} from "react-router-dom"
 class Restaurants extends Component {
     constructor(props){
         super(props)
@@ -24,17 +27,20 @@ class Restaurants extends Component {
        console.log(rest.restaurant)
         return(
             <div>
-                <div>
+                <h5>{`Restaurants in ${this.props.match.params.cityName}`}</h5>
+                <div className="welp">
                     { rest ? (
                         rest.map(places =>{
                             return(
-                                <div>
-                                    <p>{places.restaurant.name}</p>
-                                    <p>{places.restaurant.cuisines}</p>
-                                    <p>{places.restaurant.location.address}</p>
-                                    <p>{places.restaurant.phone_numbers}</p>
-                                    <p>average cost for two${places.restaurant.average_cost_for_two}</p>
-                                    {places.restaurant.photos? (
+                                <div className="cardContainer">
+                                    <MDBCard className="mb-2" style={{ marginBottom:"0px", }}>
+                                    <MDBCardImage className="img-fluid" src={places.restaurant.photos[0].photo.url} />
+                                    <MDBCardBody className="cardBod"> 
+                                    <MDBCardTitle className="titleWrapper">{places.restaurant.name}</MDBCardTitle>   
+                                    <MDBCardText style={{ marginBottom:"0px", }}>   
+                                   
+                                    {places.restaurant.cuisines}</MDBCardText>
+                                    {/* {places.restaurant.photos? (
 places.restaurant.photos.map(images =>{
     return(
         <div className="picContainer">
@@ -44,10 +50,10 @@ places.restaurant.photos.map(images =>{
 })
                                     ):""
                              
-                                    }
+                                    } */}
                                    
-                                    <p>{places.restaurant.timings}</p>
-                                    <hr/>
+                                   <Link to ={`/restaurant/${places.restaurant.R.res_id}`}> <MDBBtn color="primary" className="cardButton" >Yum!</MDBBtn></Link>
+                                    </MDBCardBody></MDBCard>
                                 </div>
                             )
                         })

@@ -1,0 +1,54 @@
+.banner {
+	width: 100vw;
+}
+.leftSide {
+	margin-top: 1vh;
+	width: 50vw;
+	height: 25vh;
+	/* background-color: red; */
+	font-size: 0.78em;
+	text-align: left;
+	margin-left: 3vw;
+}
+.combined {
+	display: flex;
+}
+#root > div > div:nth-child(2) > div > div > div > p {
+	margin-bottom: 0;
+}
+.rightSide {
+	margin-top: 1vh;
+	width: 50vw;
+	height: 25vh;
+	/* background-color: red; */
+	font-size: 0.85em;
+	text-align: left;
+	margin-left: 20vw;
+	/* border: 1px solid black; */
+}
+.checkM {
+	margin-bottom: 0;
+}
+#root
+	> div
+	> div:nth-child(2)
+	> div
+	> div
+	> div.rightSide
+	> div:nth-child(2)
+	> p {
+	margin-bottom: 0;
+}
+#root > div > div:nth-child(2) > div:nth-child(2) > h4 {
+	margin-top: 12vh;
+}
+#root
+	> div
+	> div:nth-child(2)
+	> div:nth-child(1)
+	> div
+	> div.leftSide
+	> a:nth-child(3)
+	> p {
+	margin-bottom: 0;
+}
