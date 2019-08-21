@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const massive = require("massive");
 const cors = require("cors");
 const { json } = require("body-parser");
 routes = require("./routes/routes");
@@ -13,7 +12,7 @@ app.use(json());
 
 routes(app);
 
-app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
+// app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
 
 app.listen(port, () => {
 	console.log(`app is listening on port ${port}`);
