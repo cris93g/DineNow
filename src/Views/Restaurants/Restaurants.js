@@ -8,7 +8,9 @@ class Restaurants extends Component {
     constructor(props){
         super(props)
         this.state ={
-            rest:[]
+            rest:[],
+            id:[],
+     
         }
     }
     componentDidMount(){
@@ -19,14 +21,35 @@ class Restaurants extends Component {
         ).then(response => {
             this.setState({ rest: response.data.best_rated_restaurant });
         });
+
+        axios.post(`/api/cuisines`,{
+            loc : this.props.match.params.cityName
+        }).then(response =>{
+            this.setState({id: response.data.location_suggestions[0].entity_id})
+        })
+
     }
     render(){
         console.log(this.props.match.params.cityName)
-        console.log(this.state.rest)
+        console.log(this.state)
        const {rest}= this.state
        console.log(rest.restaurant)
         return(
             <div>
+                 <div>
+                     {/* { this.state.cuisines ? (
+                         this.state.cuisines.map(types =>{
+                             return(
+                                 <div> <select className="browser-default custom-select">
+          <option value="1">{this.state.cuisines.establishment.name}</option>
+        </select></div>
+                             )
+                         }
+
+                         )
+                     ):""} */}
+                
+      </div>
                 <h5>{`Restaurants in ${this.props.match.params.cityName}`}</h5>
                 <div className="welp">
                     { rest ? (

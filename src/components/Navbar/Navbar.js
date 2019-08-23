@@ -34,14 +34,14 @@ render() {
 					}}
 					light>
           <MDBContainer>
-            <MDBNavbarBrand>
+  <Link to="/"><MDBNavbarBrand>
               DineNow
-            </MDBNavbarBrand>
+            </MDBNavbarBrand></Link>  
             {/* <MDBHamburgerToggler color="black" id="hamburger1" onClick={()=> this.toggleSingleCollapse('collapse1')} /> */}
               <MDBCollapse isOpen={this.state.collapse1} navbar>
                 <MDBNavbarNav left>
                   <MDBNavItem active>
-                    <MDBNavLink to="#!">Home</MDBNavLink>
+                    <MDBNavLink to="/">Home</MDBNavLink>
                   </MDBNavItem>
                   <MDBNavItem>
                     <MDBNavLink to="#!">Link</MDBNavLink>

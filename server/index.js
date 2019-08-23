@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const { json } = require("body-parser");
 routes = require("./routes/routes");
+const path = require("path");
 const app = express();
 app.use(express.static(__dirname+ '/../build'))
 app.use(cors());

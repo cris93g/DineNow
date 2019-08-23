@@ -33,7 +33,7 @@ class SpecificRestaurant extends Component {
                    <div className="leftSide">
                        <h4>{restaurant.name}</h4>
                        <p>{`Average cost for 2 people $${restaurant.average_cost_for_two}`}</p>
-                       <a href='tel:${restaurant.phone_numbers}'> <p>{`Number:${restaurant.phone_numbers}`}</p></a>
+                       <a href='tel:${restaurant.phone_numbers}'>{`Number:${restaurant.phone_numbers}`}</a>
                       {restaurant.user_rating ? (
                           <div>Rating: {restaurant.user_rating.aggregate_rating}/5</div>
                       ):""}
@@ -62,7 +62,7 @@ class SpecificRestaurant extends Component {
                 </div>
                 ):""}
                 <div>
-                    <h4 style={{ marginLeft:"20vw", }}>Reviews</h4>
+                    <h4 style={{ marginLeft:"20vw",padding:"5px",marginTop:"30vh" }}>Reviews</h4>
                     {restaurant.all_reviews ? (
 restaurant.all_reviews.reviews.map( rev =>{
     return(
@@ -72,13 +72,16 @@ restaurant.all_reviews.reviews.map( rev =>{
             <MDBCard
         className="my-5 px-5 pt-4"
         style={{ fontWeight: 300, maxWidth: 600 ,fontSize:"0.8em" }}
-      ><MDBCardBody className="py-0" style={{ marginBottom:"0" }}>
+      ><MDBCardBody className="py-0" 
+      style={{ marginBottom:"0"
+       }}
+       >
            <MDBRow >
                    <img
                     src={rev.review.user.profile_image}
                     alt=""
                     className="rounded-circle z-depth-1-half"
-                    style={{ maxWidth:"50px" }}
+                    style={{ width:"50px",height:"50px" }}
                   />
                   <div>
                   <p className="name" style={{ marginLeft:"100px" }}>
