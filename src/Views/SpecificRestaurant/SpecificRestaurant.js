@@ -20,8 +20,7 @@ class SpecificRestaurant extends Component {
     }
     render(){
         
-        console.log(this.props.match.params.cityId)
-       console.log(this.state.restaurant) 
+      
        const {restaurant}= this.state
        return(
             <div>
@@ -43,7 +42,7 @@ class SpecificRestaurant extends Component {
                { restaurant.location ? (
                  <a href={`https://maps.google.com/?q=${restaurant.location.address}`}>  <p>Adress: {restaurant.location.address}</p></a>
                ):""}
-               {console.log(restaurant.location)}
+            
                    </div>
                    <div className="rightSide">
                        {restaurant.highlights ? (

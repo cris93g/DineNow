@@ -49,7 +49,7 @@ showPosition(position) {
         const {rest,lat,lon}=this.state
         
         this.getLocation()
-        console.log(rest)
+       
         
         return(
             <div>
@@ -64,15 +64,23 @@ showPosition(position) {
                     return(
                         <div className="cardContainer">
                         <MDBCard className="mb-2">
-                     <MDBCardImage className="img-fluid" src={places.restaurant.featured_image} />  
+                            <div>{
+                                places.restaurant.thumb ? (
+                                  <MDBCardImage className="img-fluid" src={places.restaurant.thumb} style={{ height:"27vh", }}/>  
+                                ):
+                               <MDBCardImage className="noimg" src={require("../../images/NO-IMAGE.png")} style={{ maxheigth:"10%"}}/> 
+                            }
+                     
+</div>
+
             <MDBCardBody className="cardBod">    
-           <MDBCardTitle className="titleWrapper">{places.restaurant.name}</MDBCardTitle>
-           <MDBCardText style={{ marginBottom:"0px", }}>              {places.restaurant.cuisines} 
+           <MDBCardTitle    style={{ height:"7vh"}} className="titleWrapper">{places.restaurant.name}</MDBCardTitle>
+           <MDBCardText style={{ marginBottom:"1px",height:"6vh" }}>              {places.restaurant.cuisines} 
             </MDBCardText>
        
 
                            <Link to ={`/restaurant/${places.restaurant.R.res_id}`}>
-                            <MDBBtn color="primary" className="cardButton" >Yum!</MDBBtn></Link>
+                            <MDBBtn color="primary" className="cardButton"style={{ height:"8vh", }} >Yum!</MDBBtn></Link>
                            
                          </MDBCardBody> 
                       </MDBCard></div>
@@ -87,3 +95,5 @@ showPosition(position) {
 }
 
 export default Home
+
+

@@ -7,6 +7,7 @@ import NearMe from "./Views/NearMe/NearMe"
 import Home from "./Views/Home/Home"
 import SpecificRestaurant from "./Views/SpecificRestaurant/SpecificRestaurant"
 import Loader from "../src/components/Loader/Loader"
+import ResultsFromSearch from "../src/Views/ResultsFromSearch/ResultsFromSearch"
 export default (
     <Switch>
          <Route component={Home} exact path="/" />
@@ -16,4 +17,5 @@ export default (
         <Route component={NearMe} path="/near/:lat/:lon" />
         <Route component={SpecificRestaurant} path="/restaurant/:cityId" />
         <Route component={Loader} path="/loader" />
+        <Route component={ResultsFromSearch} path="/food/:inp/:city" />
     </Switch>);

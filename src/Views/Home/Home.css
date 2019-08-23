@@ -38,3 +38,11 @@
 	position: relative;
 	/* padding: 0; */
 }
+.noimg {
+	height: 27vh;
+	width: 48vw;
+}
+
+.img-fluid {
+	height: 27vh;
+}
